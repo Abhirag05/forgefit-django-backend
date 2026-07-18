@@ -3,14 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{%block title %}Landing page{% endblock title %}</title>
+    <title>{%block title %}{{title}}{% endblock title %}</title>
   </head>
   <body>
     <div>
-      <h1>Hi , I am Abhirag</h1>
+      <!-- single variable access -->
+      <h1>Hi i am ,{{name}}</h1>
+      <p>Age: {{age}}</p>
+      <!-- list access -->
+      <p>Skills: {{skills|join:", "}}</p>
+      <!-- dictionary access -->
+      <p>Address: {{address.title}} - {{address.city}}, {{address.state}}</p>
+
       <hr>
       {% block content %} 
         I am a Fullstack developer
+
+        <!-- object access -->
+        <p>My name is {{user.name}} and I am {{user.age}} years old.</p>
+
+        <!-- default value -->
+        <p>Empty default value:{{empty_value|default:"No value provided"}}</p>
+
       {% endblock %}
     </div>
   </body>
