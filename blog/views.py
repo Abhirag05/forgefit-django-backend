@@ -19,7 +19,8 @@ def article_details(request,**kwargs):
 def article_filter(request):
     blogs=[
         {"title": "Blog 1", "is_featured": True, "author": "Author 1"},
-        {"title": "Blog 2", "is_featured": False, "author": "Author 2"}
+        {"title": "Blog 2", "is_featured": False, "author": "Author 2"},
+        {"title": "Blog 3", "is_featured": False, "author": "Author 3"}
     ]
     post_list ={
             "blogs": blogs,

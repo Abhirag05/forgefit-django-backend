@@ -30,4 +30,25 @@
         <li>Featured: {{blog.is_featured}}</li>
     </ul>
     {%endfor%}
+
+    <h1>Use of With</h1>
+    {%with post_list.blogs|length as blog_count%}
+        <p>Number of blogs: {{blog_count}}</p>
+    {%endwith%}
+
+    <h1>Use of cycles</h1>
+    <Table border="1">
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Featured</th>
+        </tr>
+        {%for blog in post_list.blogs%}
+        <tr style="background-color: {% cycle 'red' 'white' %}">
+            <td>{{blog.title}}</td>
+            <td>{{blog.author}}</td>
+            <td>{{blog.is_featured}}</td>
+        </tr>
+        {%endfor%}
+    
 {%endblock%}
