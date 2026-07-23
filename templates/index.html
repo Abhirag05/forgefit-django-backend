@@ -4,29 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{%block title %}{{title}}{% endblock title %}</title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
   </head>
   <body>
+    {%include "Navbar.html"%}
+     <hr>
     <div>
-      <!-- single variable access -->
-      <h1>Hi i am ,{{name}}</h1>
-      <p>Age: {{age}}</p>
-      <!-- list access -->
-      <p>Skills: {{skills|join:", "}}</p>
-      <!-- dictionary access -->
-      <p>Address: {{address.title}} - {{address.city}}, {{address.state}}</p>
-
-      <hr>
       {% block content %} 
-        I am a Fullstack developer
-        <p>Role: {{role}}</p>
-
-        <!-- object access -->
-        <p>My name is {{user.name}} and I am {{user.age}} years old.</p>
-
-        <!-- default value -->
-        <p>Empty default value:{{empty_value|default:"No value provided"}}</p>
+        
 
       {% endblock %}
     </div>
+    <hr>
+    {%include "footer.html"%}
   </body>
 </html>
